@@ -31,15 +31,6 @@ require_once( get_stylesheet_directory() . '/lib/customize.php' );
 // Include Section Image CSS.
 include_once( get_stylesheet_directory() . '/lib/output.php' );
 
-// Add WooCommerce support.
-include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php' );
-
-// Add the WooCommerce customizer functions.
-include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.php' );
-
-// Include notice to install Genesis Connect for WooCommerce.
-include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php' );
-
 // Child theme (do not remove).
 define( 'CHILD_THEME_NAME', 'Koala' );
 define( 'CHILD_THEME_URL', 'http://www.ydesfemmesmtl.org/' );
@@ -91,10 +82,6 @@ add_theme_support( 'genesis-responsive-viewport' );
 
 // Rename menus.
 add_theme_support( 'genesis-menus', array( 'primary' => __( 'Before Content Menu', 'koala' ), 'secondary' => __( 'Footer Menu', 'koala' ) ) );
-
-// Remove output of primary navigation right extras.
-remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
-remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
 // Remove output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
@@ -155,20 +142,20 @@ add_theme_support( 'genesis-structural-wraps', array(
 ) );
 
 // Modify the size of the Gravatar in the author box.
-add_filter( 'genesis_author_box_gravatar_size', 'koala_author_box_gravatar' );
-function koala_author_box_gravatar( $size ) {
-	return 88;
-}
+// add_filter( 'genesis_author_box_gravatar_size', 'koala_author_box_gravatar' );
+// function koala_author_box_gravatar( $size ) {
+// 	return 88;
+// }
 
 // Modify the size of the Gravatar in the entry comments.
-add_filter( 'genesis_comment_list_args', 'koala_comments_gravatar' );
-function koala_comments_gravatar( $args ) {
-
-	$args['avatar_size'] = 60;
-
-	return $args;
-
-}
+// add_filter( 'genesis_comment_list_args', 'koala_comments_gravatar' );
+// function koala_comments_gravatar( $args ) {
+//
+// 	$args['avatar_size'] = 60;
+//
+// 	return $args;
+//
+// }
 
 // Add body class if primary navigation is active.
 add_filter( 'body_class', 'koala_body_classes' );
