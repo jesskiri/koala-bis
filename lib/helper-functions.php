@@ -1,13 +1,13 @@
 <?php
 /**
- * Parallax Pro.
+ * Koala
  *
- * This file adds theme helper functions for use elsewhere in Parallax Pro.
+ * This file adds the front page to the Koala Theme.
  *
- * @package Parallax
- * @author  StudioPress
+ * @package Koala
+ * @author  Y des femmes Montréal
  * @license GPL-2.0+
- * @link    http://my.studiopress.com/themes/base/
+ * @link    http://www.ydesfemmesmtl.org
  */
 
 /**
@@ -17,7 +17,7 @@
  *
  * @return string Hex value of the default color.
  */
-function parallax_get_default_accent_color() {
+function koala_get_default_accent_color() {
 	return '#00a0af';
 }
 
@@ -29,7 +29,7 @@ function parallax_get_default_accent_color() {
  *
  * @return string Hex color code for contrasting color.
  */
-function parallax_color_contrast( $color ) {
+function koala_color_contrast( $color ) {
 
 	$hexcolor = str_replace( '#', '', $color );
 	$red      = hexdec( substr( $hexcolor, 0, 2 ) );

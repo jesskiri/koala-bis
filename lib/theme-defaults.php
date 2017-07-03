@@ -1,22 +1,22 @@
 <?php
 /**
- * Parallax Pro.
+ * Koala
  *
- * This file adds the default theme settings to the Parallax Pro Theme.
+ * This file adds the front page to the Koala Theme.
  *
- * @package Parallax
- * @author  StudioPress
+ * @package Koala
+ * @author  Y des femmes Montréal
  * @license GPL-2.0+
- * @link    http://my.studiopress.com/themes/parallax/
+ * @link    http://www.ydesfemmesmtl.org
  */
 
-add_filter( 'genesis_theme_settings_defaults', 'parallax_theme_defaults' );
+add_filter( 'genesis_theme_settings_defaults', 'koala_theme_defaults' );
 /**
  * Updates theme settings on reset.
  *
  * @since 1.0.0
  */
-function parallax_theme_defaults( $defaults ) {
+function koala_theme_defaults( $defaults ) {
 
 	$defaults['blog_cat_num']              = 5;
 	$defaults['content_archive']           = 'full';
@@ -24,18 +24,18 @@ function parallax_theme_defaults( $defaults ) {
 	$defaults['content_archive_thumbnail'] = 0;
 	$defaults['posts_nav']                 = 'numeric';
 	$defaults['site_layout']               = 'full-width-content';
-	
+
 	return $defaults;
 
 }
 
-add_action( 'after_switch_theme', 'parallax_theme_setting_defaults' );
+add_action( 'after_switch_theme', 'koala_theme_setting_defaults' );
 /**
  * Updates theme settings on activation.
  *
  * @since 1.0.0
  */
-function parallax_theme_setting_defaults() {
+function koala_theme_setting_defaults() {
 
 	if( function_exists( 'genesis_update_settings' ) ) {
 
@@ -54,13 +54,13 @@ function parallax_theme_setting_defaults() {
 
 }
 
-add_filter( 'simple_social_default_styles', 'parallax_social_default_styles' );
+add_filter( 'simple_social_default_styles', 'koala_social_default_styles' );
 /**
  * Updates Simple Social Icon settings on activation.
  *
  * @since 1.0.0
  */
-function parallax_social_default_styles( $defaults ) {
+function koala_social_default_styles( $defaults ) {
 
 	$args = array(
 		'alignment'              => 'aligncenter',

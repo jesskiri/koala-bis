@@ -1,13 +1,13 @@
-/*
-	Theme Name: Koala-bis
-	Theme URI: http://my.studiopress.com/themes/parallax/
-	Description: The new role of website design is to tell a story, which is what Parallax Pro was developed to do.
-	Author: StudioPress
-	Author URI: http://www.studiopress.com/
+koala/*
+	Theme Name: Koala
+	Theme URI: http://www.ydesfemmesmtl.org
+	Description:
+	Author: Y des femmes Montréal
+	Author URI: http://www.ydesfemmesmtl.org
 
-	Version: 1.3.2
+	Version: 0.1
 
-	Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-header, custom-menu, e-commerce, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, accessibility-ready
+	Tags:
 
 	Template: genesis
 	Template Version: 2.1
@@ -15,7 +15,7 @@
 	License: GPL-2.0+
 	License URI: http://www.opensource.org/licenses/gpl-license.php
 
-	Text Domain: parallax-pro
+	Text Domain: koala
 */
 
 /* Table of Contents
@@ -160,7 +160,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-body.parallax-home {
+body.koala-home {
 	background: none;
 }
 
@@ -648,12 +648,12 @@ th {
 	margin-top: 170px;
 }
 
-.parallax-home .site-inner {
+.koala-home .site-inner {
 	margin-top: 66px;
 	max-width: 100%;
 }
 
-.parallax-landing .site-inner {
+.koala-landing .site-inner {
 	margin-top: 100px;
 }
 
@@ -982,16 +982,16 @@ img.alignright,
 /* Simple Social Icons
 --------------------------------------------- */
 
-.parallax-home .content .simple-social-icons {
+.koala-home .content .simple-social-icons {
 	margin-top: 40px;
 }
 
-.parallax-home .content .simple-social-icons ul li {
+.koala-home .content .simple-social-icons ul li {
 	margin: 0 10px !important;
 }
 
-.parallax-home .content .simple-social-icons ul li a,
-.parallax-home .content .simple-social-icons ul li a:hover {
+.koala-home .content .simple-social-icons ul li a,
+.koala-home .content .simple-social-icons ul li a:hover {
 	padding: 20px;
 }
 
@@ -1471,7 +1471,7 @@ img.alignright,
 	width: 100%;
 }
 
-.full-width-content.parallax-home .content {
+.full-width-content.koala-home .content {
 	margin-top: 0;
 	padding: 0;
 }
@@ -1866,7 +1866,7 @@ p.form-submit,
 		max-width: 768px;
 	}
 
-	.parallax-home .site-inner {
+	.koala-home .site-inner {
 		max-width: none;
 	}
 
@@ -1897,7 +1897,7 @@ p.form-submit,
 		padding: 10px;
 	}
 
-	.parallax-home .site-inner {
+	.koala-home .site-inner {
 		margin-top: 0;
 	}
 
@@ -1961,7 +1961,7 @@ p.form-submit,
 		padding: 0 5%;
 	}
 
-	.parallax-home .site-inner {
+	.koala-home .site-inner {
 		padding: 0;
 	}
 
@@ -2107,7 +2107,7 @@ p.form-submit,
 		padding: 90px 0 100px;
 	}
 
-	.parallax-home .simple-social-icons ul li {
+	.koala-home .simple-social-icons ul li {
 		margin: 0 20px 20px !important;
 	}
 

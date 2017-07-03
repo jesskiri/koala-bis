@@ -1,13 +1,13 @@
 <?php
 /**
- * Parallax Pro.
+ * Koala.
  *
- * This file adds the functions to the Parallax Pro Theme.
+ * This file adds the functions to the Koala Theme.
  *
- * @package Parallax
- * @author  StudioPress
+ * @package Koala
+ * @author  Jessica Boily
  * @license GPL-2.0+
- * @link    http://my.studiopress.com/themes/parallax/
+ * @link
  */
 
 // Start the engine.
@@ -17,9 +17,9 @@ include_once( get_template_directory() . '/lib/init.php' );
 include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
 
 // Set Localization (do not remove).
-add_action( 'after_setup_theme', 'parallax_localization_setup' );
-function parallax_localization_setup(){
-	load_child_theme_textdomain( 'parallax-pro', get_stylesheet_directory() . '/languages' );
+add_action( 'after_setup_theme', 'koala_localization_setup' );
+function koala_localization_setup(){
+	load_child_theme_textdomain( 'koala', get_stylesheet_directory() . '/languages' );
 }
 
 // Add the theme helper functions.
@@ -41,33 +41,33 @@ include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.
 include_once( get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php' );
 
 // Child theme (do not remove).
-define( 'CHILD_THEME_NAME', 'Parallax Pro' );
-define( 'CHILD_THEME_URL', 'http://my.studiopress.com/themes/parallax/' );
-define( 'CHILD_THEME_VERSION', '1.3.2' );
+define( 'CHILD_THEME_NAME', 'Koala' );
+define( 'CHILD_THEME_URL', 'http://www.ydesfemmesmtl.org/' );
+define( 'CHILD_THEME_VERSION', '0.1' );
 
 // Enqueue scripts and styles.
 add_action( 'wp_enqueue_scripts', 'parallax_enqueue_scripts_styles' );
 function parallax_enqueue_scripts_styles() {
 
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style( 'parallax-google-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700,700i|Quicksand:400,500', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'koala-google-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700,700i|Quicksand:400,500', array(), CHILD_THEME_VERSION );
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-	wp_enqueue_script( 'parallax-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menus' . $suffix . '.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'koala-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menus' . $suffix . '.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 	wp_localize_script(
-		'parallax-responsive-menu',
+		'koala-responsive-menu',
 		'genesis_responsive_menu',
-		parallax_responsive_menu_settings()
+		koala_responsive_menu_settings()
 	);
 
 }
 
 // Define our responsive menu settings.
-function parallax_responsive_menu_settings() {
+function koala_responsive_menu_settings() {
 
 	$settings = array(
-		'mainMenu'    => __( 'Menu', 'parallax-pro' ),
-		'subMenu'     => __( 'Submenu', 'parallax-pro' ),
+		'mainMenu'    => __( 'Menu', 'koala' ),
+		'subMenu'     => __( 'Submenu', 'koala' ),
 		'menuClasses' => array(
 			'combine' => array(
 				'.nav-header',
@@ -90,7 +90,7 @@ add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu',
 add_theme_support( 'genesis-responsive-viewport' );
 
 // Rename menus.
-add_theme_support( 'genesis-menus', array( 'primary' => __( 'Before Content Menu', 'parallax-pro' ), 'secondary' => __( 'Footer Menu', 'parallax-pro' ) ) );
+add_theme_support( 'genesis-menus', array( 'primary' => __( 'Before Content Menu', 'koala' ), 'secondary' => __( 'Footer Menu', 'koala' ) ) );
 
 // Remove output of primary navigation right extras.
 remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
@@ -101,8 +101,8 @@ remove_filter( 'genesis_nav_items', 'genesis_nav_right', 10, 2 );
 remove_filter( 'wp_nav_menu_items', 'genesis_nav_right', 10, 2 );
 
 // Remove navigation meta box.
-add_action( 'genesis_theme_settings_metaboxes', 'parallax_remove_genesis_metaboxes' );
-function parallax_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
+add_action( 'genesis_theme_settings_metaboxes', 'koala_remove_genesis_metaboxes' );
+function koala_remove_genesis_metaboxes( $_genesis_theme_settings_pagehook ) {
 	remove_meta_box( 'genesis-theme-settings-nav', $_genesis_theme_settings_pagehook, 'main' );
 }
 
@@ -115,8 +115,8 @@ remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 add_action( 'genesis_footer', 'genesis_do_subnav', 7 );
 
 // Reduce the secondary navigation menu to one level depth.
-add_filter( 'wp_nav_menu_args', 'parallax_secondary_menu_args' );
-function parallax_secondary_menu_args( $args ){
+add_filter( 'wp_nav_menu_args', 'koala_secondary_menu_args' );
+function koala_secondary_menu_args( $args ){
 
 	if( 'secondary' != $args['theme_location'] ) {
 		return $args;
@@ -155,14 +155,14 @@ add_theme_support( 'genesis-structural-wraps', array(
 ) );
 
 // Modify the size of the Gravatar in the author box.
-add_filter( 'genesis_author_box_gravatar_size', 'parallax_author_box_gravatar' );
-function parallax_author_box_gravatar( $size ) {
+add_filter( 'genesis_author_box_gravatar_size', 'koala_author_box_gravatar' );
+function koala_author_box_gravatar( $size ) {
 	return 88;
 }
 
 // Modify the size of the Gravatar in the entry comments.
-add_filter( 'genesis_comment_list_args', 'parallax_comments_gravatar' );
-function parallax_comments_gravatar( $args ) {
+add_filter( 'genesis_comment_list_args', 'koala_comments_gravatar' );
+function koala_comments_gravatar( $args ) {
 
 	$args['avatar_size'] = 60;
 
@@ -171,8 +171,8 @@ function parallax_comments_gravatar( $args ) {
 }
 
 // Add body class if primary navigation is active.
-add_filter( 'body_class', 'parallax_body_classes' );
-function parallax_body_classes( $classes ) {
+add_filter( 'body_class', 'koala_body_classes' );
+function koala_body_classes( $classes ) {
 
 	if ( has_nav_menu( 'primary' ) ) {
 		$classes[] = 'nav-primary-active';
@@ -195,26 +195,26 @@ add_action( 'genesis_after_entry', 'genesis_after_entry_widget_area', 5 );
 // Register widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'home-section-1',
-	'name'        => __( 'Home Section 1', 'parallax-pro' ),
-	'description' => __( 'This is the home section 1 section.', 'parallax-pro' ),
+	'name'        => __( 'Home Section 1', 'koala' ),
+	'description' => __( 'This is the home section 1 section.', 'koala' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-2',
-	'name'        => __( 'Home Section 2', 'parallax-pro' ),
-	'description' => __( 'This is the home section 2 section.', 'parallax-pro' ),
+	'name'        => __( 'Home Section 2', 'koala' ),
+	'description' => __( 'This is the home section 2 section.', 'koala' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-3',
-	'name'        => __( 'Home Section 3', 'parallax-pro' ),
-	'description' => __( 'This is the home section 3 section.', 'parallax-pro' ),
+	'name'        => __( 'Home Section 3', 'koala' ),
+	'description' => __( 'This is the home section 3 section.', 'koala' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-4',
-	'name'        => __( 'Home Section 4', 'parallax-pro' ),
-	'description' => __( 'This is the home section 4 section.', 'parallax-pro' ),
+	'name'        => __( 'Home Section 4', 'koala' ),
+	'description' => __( 'This is the home section 4 section.', 'koala' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'home-section-5',
-	'name'        => __( 'Home Section 5', 'parallax-pro' ),
-	'description' => __( 'This is the home section 5 section.', 'parallax-pro' ),
+	'name'        => __( 'Home Section 5', 'koala' ),
+	'description' => __( 'This is the home section 5 section.', 'koala' ),
 ) );

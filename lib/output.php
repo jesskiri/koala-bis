@@ -1,30 +1,30 @@
 <?php
 /**
- * Parallax Pro.
+ * Koala
  *
- * This file adds the required CSS to the front end of the Parallax Pro Theme.
+ * This file adds the front page to the Koala Theme.
  *
- * @package Parallax
- * @author  StudioPress
+ * @package Koala
+ * @author  Y des femmes Montréal
  * @license GPL-2.0+
- * @link    http://my.studiopress.com/themes/parallax/
+ * @link    http://www.ydesfemmesmtl.org
  */
 
-add_action( 'wp_enqueue_scripts', 'parallax_css' );
+add_action( 'wp_enqueue_scripts', 'koala_css' );
 /**
  * Checks the settings for the images and background colors for each image.
  * If any of these value are set the appropriate CSS is output.
- * 
+ *
  * @since 1.3.0
  */
-function parallax_css() {
+function koala_css() {
 
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 
-	$opts = apply_filters( 'parallax_images', array( '1', '3', '5' ) );
-	$link_color = get_theme_mod( 'parallax_link_color', parallax_get_default_accent_color() );
-	$menu_link_color = get_theme_mod( 'parallax_menu_link_color', parallax_get_default_accent_color() );
-	$accent_color = get_theme_mod( 'parallax_accent_color', parallax_get_default_accent_color() );
+	$opts = apply_filters( 'koala_images', array( '1', '3', '5' ) );
+	$link_color = get_theme_mod( 'koala_link_color', koala_get_default_accent_color() );
+	$menu_link_color = get_theme_mod( 'koala_menu_link_color', koala_get_default_accent_color() );
+	$accent_color = get_theme_mod( 'koala_accent_color', koala_get_default_accent_color() );
 
 	$settings = array();
 
@@ -42,7 +42,7 @@ function parallax_css() {
 
 	}
 
-	$css .= ( parallax_get_default_accent_color() !== $accent_color ) ? sprintf( '
+	$css .= ( koala_get_default_accent_color() !== $accent_color ) ? sprintf( '
 
 		button:focus,
 		button:hover,
@@ -103,9 +103,9 @@ function parallax_css() {
 			color: %2$s !important;
 		}
 
-		', $accent_color, parallax_color_contrast( $accent_color ) ) : '';
+		', $accent_color, koala_color_contrast( $accent_color ) ) : '';
 
-	$css .= ( parallax_get_default_accent_color() !== $link_color ) ? sprintf( '
+	$css .= ( koala_get_default_accent_color() !== $link_color ) ? sprintf( '
 
 		a,
 		.entry-title a:focus,
@@ -117,7 +117,7 @@ function parallax_css() {
 
 		', $link_color ) : '';
 
-	$css .= ( parallax_get_default_accent_color() !== $link_color ) ? sprintf( '
+	$css .= ( koala_get_default_accent_color() !== $link_color ) ? sprintf( '
 
 		.genesis-nav-menu a:focus,
 		.genesis-nav-menu a:hover,
