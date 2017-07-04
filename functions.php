@@ -179,7 +179,7 @@ add_theme_support( 'genesis-after-entry-widget-area' );
 remove_action( 'genesis_after_entry', 'genesis_after_entry_widget_area' );
 add_action( 'genesis_after_entry', 'genesis_after_entry_widget_area', 5 );
 
-// Register widget areas.
+// Register homepage widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'home-section-1',
 	'name'        => __( 'Home Section 1', 'koala' ),
@@ -219,4 +219,41 @@ genesis_register_sidebar( array(
 	'id'          => 'home-section-8',
 	'name'        => __( 'Home Section 8', 'koala' ),
 	'description' => __( 'This is the home section 8 section.', 'koala' ),
+) );
+
+// Register Familles widget areas.
+genesis_register_sidebar( array(
+	'id'          => 'familles-intro',
+	'name'        => __( 'Familles Intro', 'koala' ),
+	'description' => __( 'This is the Familles intro section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-temoignage',
+	'name'        => __( 'Familles témoignage', 'koala' ),
+	'description' => __( 'This is the Familles témoignage section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-faits',
+	'name'        => __( 'Familles Faits Saillants', 'koala' ),
+	'description' => __( 'This is the Faits Saillants section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-qui',
+	'name'        => __( 'Familles Qui sont-elles?', 'koala' ),
+	'description' => __( 'This is the Qui sont-elles? section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-resultats',
+	'name'        => __( 'Familles Résultats', 'koala' ),
+	'description' => __( 'This is the Familles Résultats section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-frequentation',
+	'name'        => __( 'Familles Fréquentation', 'koala' ),
+	'description' => __( 'This is the Familles Fréquentation section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'familles-enjeux',
+	'name'        => __( 'Familles Enjeux sociaux', 'koala' ),
+	'description' => __( 'This is the Familles Enjeux section.', 'koala' ),
 ) );
