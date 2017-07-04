@@ -105,7 +105,7 @@ function koala_homepage_widgets() {
 	) );
 
 	genesis_widget_area( 'home-section-6', array(
-		'before' => '<div class="home-odd home-section-6 widget-area"><div class="wrap">',
+		'before' => '<div class="home-even home-section-6 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
 
@@ -115,7 +115,7 @@ function koala_homepage_widgets() {
 	) );
 
 	genesis_widget_area( 'home-section-8', array(
-		'before' => '<div class="home-odd home-section-8 widget-area"><div class="wrap">',
+		'before' => '<div class="home-even home-section-8 widget-area"><div class="wrap">',
 		'after'  => '</div></div>',
 	) );
 
