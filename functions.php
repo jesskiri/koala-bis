@@ -205,3 +205,18 @@ genesis_register_sidebar( array(
 	'name'        => __( 'Home Section 5', 'koala' ),
 	'description' => __( 'This is the home section 5 section.', 'koala' ),
 ) );
+genesis_register_sidebar( array(
+	'id'          => 'home-section-6',
+	'name'        => __( 'Home Section 6', 'koala' ),
+	'description' => __( 'This is the home section 6 section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'home-section-7',
+	'name'        => __( 'Home Section 7', 'koala' ),
+	'description' => __( 'This is the home section 7 section.', 'koala' ),
+) );
+genesis_register_sidebar( array(
+	'id'          => 'home-section-8',
+	'name'        => __( 'Home Section 8', 'koala' ),
+	'description' => __( 'This is the home section 8 section.', 'koala' ),
+) );
