@@ -36,10 +36,13 @@ function koala_familles_genesis_meta() {
 		remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs');
 
 		// Remove the default Genesis loop.
-		remove_action( 'genesis_loop', 'genesis_do_loop' );
+		// remove_action( 'genesis_loop', 'genesis_do_loop' );
 
 		// Add homepage widgets.
 		add_action( 'genesis_loop', 'koala_familles_widgets' );
+
+		//Featured image as background
+		add_action( 'wp_head', 'koala_featured_as_background', 99);
 
 	}
 }

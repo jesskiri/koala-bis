@@ -169,6 +169,18 @@ function koala_body_classes( $classes ) {
 
 }
 
+// KOALA Featured image as background-image
+
+function koala_featured_as_background() {
+	global $post;
+
+	$featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');
+
+	if ($featured_img_url)
+	echo '<style> .entry {background-image:url('. $featured_img_url.');} </style>';
+}
+
+
 // Add support for 3-column footer widgets.
 add_theme_support( 'genesis-footer-widgets', 1 );
 
