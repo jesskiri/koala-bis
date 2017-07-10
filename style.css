@@ -1,4 +1,4 @@
-koala/*
+/*
 	Theme Name: Koala
 	Theme URI: http://www.ydesfemmesmtl.org
 	Description:
@@ -58,14 +58,12 @@ koala/*
 		- Responsive Navigation
 	- Content Area
 		- Homepage
-		- Pricing Table
 		- Content
 		- Entries
 		- Entry Meta
 		- After Entry
 		- Pagination
 		- Content Boxes
-		- Comments
 	- Sidebar
 	- Footer Widgets
 	- Site Footer
@@ -76,7 +74,6 @@ koala/*
 		- Max-width: 860px
 		- Max-width: 480px
 */
-
 
 /* HTML5 Reset
 ---------------------------------------------------------------------------------------------------- */
@@ -152,7 +149,7 @@ body > div {
 body {
 	background-color: #fff;
 	color: #000;
-	font-family: 'Cormorant Garamond', serif;
+	font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
 	font-size: 22px;
 	font-size: 2.2rem;
 	font-weight: 400;
@@ -210,7 +207,7 @@ ul {
 }
 
 li {
-	list-style-type: none;
+	list-style-type: circle;
 }
 
 b,
@@ -868,6 +865,13 @@ th {
 	margin-bottom: 40px;
 }
 
+.familles .widget-title,
+.familles .widget-title {
+	font-size: 60px;
+	font-size: 6rem;
+	margin-bottom: 40px;
+}
+
 .home-section-1 .widget-title {
 	font-size: 72px;
 	font-size: 7.2rem;
@@ -1304,7 +1308,7 @@ img.alignright,
 
 .home-even .wrap,
 .home-odd .wrap {
-	max-width: 960px;
+	/*max-width: 960px;*/
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -1349,105 +1353,48 @@ img.alignright,
 	background-color: #fff;
 }
 
+
+.entry,
 .home-section-1,
 .home-section-3,
 .home-section-5 {
 	background-attachment: fixed;
-	background-color: #000;
+	background-color: #fff;
 	background-position: 50% 0px;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
 	-moz-background-size:    cover;
 	background-size:         cover;
 }
+.home-section-2,
+.home-section-4,
+.home-section-6 {
+	background-color: #c4e0f5;
+}
 
-.home-section-1 {
+.home-even .entry {
+	background-color: #fff;
+}
+
+.entry, .home-section-1 {
 	display: table;
 	height: calc(100vh - 66px);
-	overflow: hidden;
+	/*overflow: hidden;*/
 	padding: 100px 0;
 	table-layout: fixed;
 	text-align: center;
 	width: 100%;
 }
 
+.familles-intro {
+	background-color: #C7E2F5;
+}
+
+
 .home-section-1 .full-height {
 	display: table-cell;
 	vertical-align: middle;
 	width: 100%;
-}
-
-/* Pricing Table
---------------------------------------------- */
-
-.pricing-table {
-	line-height: 1;
-}
-
-.pricing-table h4 {
-	border-bottom: 2px solid #000;
-	color: #000;
-	font-size: 22px;
-	font-size: 2.2rem;
-	font-weight: 500;
-	margin: -40px -40px 40px;
-	padding: 40px;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition:    all 0.2s ease-in-out;
-	-ms-transition:     all 0.2s ease-in-out;
-	-o-transition:      all 0.2s ease-in-out;
-	transition:         all 0.2s ease-in-out;
-}
-
-.pricing-table .one-third {
-	background-color: #fff;
-	border: 2px solid #000;
-	margin: 20px -2px;
-	padding: 40px;
-	width: 33.33%;
-}
-
-.pricing-table .one-third:nth-child(3n+1) {
-	margin: 20px 0;
-}
-
-.pricing-table .one-third:nth-child(3n+2) {
-	margin-bottom: 0;
-	margin-top: 0;
-}
-
-.pricing-table .one-third:nth-child(3n) {
-	margin: 20px 0;
-}
-
-.pricing-table ul li::before {
-	content: "\f139";
-	display: inline-block;
-	font: normal 20px/1 'dashicons';
-	margin-right: 5px;
-	margin-top: -2px;
-	vertical-align: top;
-	-webkit-font-smoothing: antialiased;
-}
-
-.pricing-table ul li {
-	border-bottom: 1px dotted #ddd;
-	color: #000;
-	padding-bottom: 10px;
-	margin-bottom: 15px;
-}
-
-.pricing-table a.button {
-	background-color: #000;
-	border: 3px solid #000;
-	color: #fff;
-}
-
-.pricing-table a.button:focus,
-.pricing-table a.button:hover {
-	background-color: #00a0af;
-	border: 3px solid #00a0af;
-	color: #fff !important;
 }
 
 /* Content
@@ -1665,70 +1612,6 @@ p.entry-meta {
 .content-box-yellow {
 	background-color: #fef5c4;
 	border: 1px solid #fadf98;
-}
-
-/* Comments
---------------------------------------------- */
-
-.comment-respond,
-.entry-comments,
-.entry-pings {
-	margin-bottom: 100px;
-}
-
-p.comment-meta,
-.entry-comments .comment,
-.entry-comments .comment-reply {
-	margin-bottom: 40px;
-}
-
-.comment-header {
-	font-size: 20px;
-	font-size: 2rem;
-}
-
-.entry-comments .comment {
-	border-bottom: 1px solid #000;
-}
-
-.comment-content,
-.entry-comments .comment {
-	clear: both;
-}
-
-p.form-submit,
-.entry-comments .children .comment,
-.entry-comments .comment-author {
-	margin: 0;
-}
-
-.entry-comments .children .comment {
-	border: none;
-}
-
-.comment-respond label {
-	display: block;
-	font-weight: 700;
-}
-
-.comment-respond input[type="email"],
-.comment-respond input[type="text"],
-.comment-respond input[type="url"] {
-	width: 100%;
-}
-
-.comment-list li,
-.ping-list li {
-	list-style-type: none;
-}
-
-.entry-comments ul.children {
-	margin-left: 40px;
-}
-
-.form-allowed-tags,
-.ping-list .reply {
-	display: none;
 }
 
 
