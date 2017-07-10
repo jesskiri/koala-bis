@@ -30,7 +30,7 @@ function koala_home_genesis_meta() {
 		add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 		// Remove primary navigation.
-		remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
+		// remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 
 		// Remove breadcrumbs.
 		remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs');
