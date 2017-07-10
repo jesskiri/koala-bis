@@ -25,6 +25,10 @@ function koala_css() {
 	$link_color = get_theme_mod( 'koala_link_color', koala_get_default_accent_color() );
 	$menu_link_color = get_theme_mod( 'koala_menu_link_color', koala_get_default_accent_color() );
 	$accent_color = get_theme_mod( 'koala_accent_color', koala_get_default_accent_color() );
+	$site_header_color = get_theme_mod( 'koala_site_header_color', koala_get_default_accent_color() );
+	$nav_primary_color = get_theme_mod( 'koala_nav_primary_color', koala_get_default_accent_color() );
+	$footer_color = get_theme_mod( 'koala_footer_color', koala_get_default_accent_color() );
+
 
 	$settings = array();
 
@@ -105,7 +109,7 @@ function koala_css() {
 
 		', $accent_color, koala_color_contrast( $accent_color ) ) : '';
 
-	$css .= ( koala_get_default_accent_color() !== $link_color ) ? sprintf( '
+	$css .= ( koala_get_default_accent_color() !== $menu_link_color ) ? sprintf( '
 
 		a,
 		.entry-title a:focus,
@@ -138,6 +142,33 @@ function koala_css() {
 		}
 
 		', $menu_link_color ) : '';
+
+		$css .= ( koala_get_default_accent_color() !== $site_header_color ) ? sprintf( '
+
+		.site-header,
+		.site-header .sub-menu {
+			background-color: %1$s;
+		}
+
+			', $site_header_color ) : '';
+
+		$css .= ( koala_get_default_accent_color() !== $nav_primary_color ) ? sprintf( '
+
+		.nav-primary,
+		.nav-primary .wrap,
+		.nav-primary .sub-menu {
+			background-color: %1$s;
+		}
+
+				', $nav_primary_color ) : '';
+
+		$css .= ( koala_get_default_accent_color() !== $footer_color ) ? sprintf( '
+
+		.site-footer {
+			background-color: %1$s;
+		}
+
+				', $footer_color ) : '';
 
 	if ( $css ) {
 		wp_add_inline_style( $handle, $css );

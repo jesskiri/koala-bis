@@ -121,4 +121,70 @@ function koala_customizer() {
 		)
 	);
 
+	//Site Header color.
+	$wp_customize->add_setting(
+		'koala_site_header_color',
+		array(
+			'default'           => koala_get_default_accent_color(),
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'koala_site_header_color',
+			array(
+				'description' => __( 'Change the  color for site header', 'koala' ),
+				'label'       => __( 'Site Header Color', 'koala' ),
+				'section'     => 'colors',
+				'settings'    => 'koala_site_header_color',
+			)
+		)
+	);
+
+	// Nav-primary color.
+	$wp_customize->add_setting(
+		'koala_nav_primary_color',
+		array(
+			'default'           => koala_get_default_accent_color(),
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'koala_nav_primary_color',
+			array(
+				'description' => __( 'Change the  color for primary menu', 'koala' ),
+				'label'       => __( 'Nav primary menu', 'koala' ),
+				'section'     => 'colors',
+				'settings'    => 'koala_nav_primary_color',
+			)
+		)
+	);
+
+	// Footer color.
+	$wp_customize->add_setting(
+		'koala_footer_color',
+		array(
+			'default'           => koala_get_default_accent_color(),
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'koala_footer_color',
+			array(
+				'description' => __( 'Change the  color for footer', 'koala' ),
+				'label'       => __( 'Footer Color', 'koala' ),
+				'section'     => 'colors',
+				'settings'    => 'koala_footer_color',
+			)
+		)
+	);
+
 }
