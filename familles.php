@@ -18,7 +18,7 @@ add_action( 'genesis_meta', 'koala_familles_genesis_meta' );
  */
 function koala_familles_genesis_meta() {
 
-	if ( is_active_sidebar( 'familles-section-1' )) {
+	if ( is_active_sidebar( 'familles-intro' )) {
 
 		// Enqueue koala script.
 		add_action( 'wp_enqueue_scripts', 'koala_enqueue_koala_script' );
@@ -30,7 +30,7 @@ function koala_familles_genesis_meta() {
 		add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );
 
 		// Remove primary navigation.
-		remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
+		// remove_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_nav' );
 
 		// Remove breadcrumbs.
 		remove_action( 'genesis_before_loop', 'genesis_do_breadcrumbs');
@@ -44,8 +44,17 @@ function koala_familles_genesis_meta() {
 		//Featured image as background
 		add_action( 'wp_head', 'koala_featured_as_background', 99);
 
+		// Add custom opening div for entry title
+		add_action( 'genesis_before_entry', 'koala_do_before_entry', 7 );
+
+		// Add custom closing div for entry title
+add_action( 'genesis_after_entry', 'koala_do_after_entry' );
+
+
 	}
 }
+
+
 
 // Remove skip link for primary navigation.
 add_filter( 'genesis_skip_links_output', 'koala_skip_links_output' );
@@ -71,7 +80,7 @@ function koala_enqueue_koala_script() {
 // Define koala-home body class.
 function koala_body_class( $classes ) {
 
-	$classes[] = 'koala-home';
+	$classes[] = 'koala-familles';
 
 	return $classes;
 

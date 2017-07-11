@@ -41,7 +41,8 @@ add_action( 'wp_enqueue_scripts', 'parallax_enqueue_scripts_styles' );
 function parallax_enqueue_scripts_styles() {
 
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style( 'koala-google-fonts', '//fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i,700,700i|Quicksand:400,500', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'koala-google-fonts', '//fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900', array(), CHILD_THEME_VERSION );
+
 
 	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_script( 'koala-responsive-menu', get_stylesheet_directory_uri() . '/js/responsive-menus' . $suffix . '.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
@@ -157,8 +158,11 @@ add_theme_support( 'genesis-structural-wraps', array(
 //
 // }
 
+
+
 // Add body class if primary navigation is active.
 add_filter( 'body_class', 'koala_body_classes' );
+
 function koala_body_classes( $classes ) {
 
 	if ( has_nav_menu( 'primary' ) ) {
@@ -177,7 +181,22 @@ function koala_featured_as_background() {
 	$featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');
 
 	if ($featured_img_url)
-	echo '<style> .entry {background-image:url('. $featured_img_url.');} </style>';
+	echo '<style> .koala-page {background-image:url('. $featured_img_url.');} </style>';
+}
+
+
+// Add custom opening div for entry title
+add_action( 'genesis_before_entry', 'koala_do_before_entry', 7 );
+
+function koala_do_before_entry() {
+	echo '<div class="koala-page">';
+}
+
+// Add custom closing div for entry title
+add_action( 'genesis_after_entry', 'koala_do_after_entry' );
+
+function koala_do_after_entry() {
+	echo '</div>';
 }
 
 
